@@ -6,7 +6,9 @@ public class Launcher {
 
     public static void main(String[] args) {
         Display display = new Display();
+        
         int numberOfPlayer = 0;
+        
         display.Welcome();
         String inputString;
         display.NumberOfPlayer();
@@ -31,6 +33,11 @@ public class Launcher {
                 numberOfPlayer = -1;
             }
         }
-
+        try {
+            new Game(numberOfPlayer);
+        } catch (Exception e) {
+            System.out.println("ERROR: "+e);
+        }
+        
     }
 }
