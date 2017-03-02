@@ -1,5 +1,6 @@
-package fr.esiea.unique.binome.name.dictionary;
+package fr.esiea.unique.Gossart_Mierzynski.dictionary;
 
+import fr.esiea.unique.Gossart_Mierzynski.dictionary.IDictionary;
 import org.junit.Before;
 
 import static junit.framework.Assert.assertTrue;
