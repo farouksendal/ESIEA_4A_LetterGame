@@ -13,17 +13,17 @@ import java.util.Scanner;
  *
  * @author nicolas
  */
-public final class InitialisationGame {
+public class InitialisationGame {
 
     protected Scanner scanner;
     protected ArrayList<Player> players;
+    private ArrayList<Character> pool;
     int numberOfPlayer;
 
     public InitialisationGame(int numberOfPlayer) {
         this.numberOfPlayer = numberOfPlayer;
         players = new ArrayList<Player>();
         getANickname();
-        System.out.println("InitialisationGame.<init>()");
         whosFirst();
     }
 
@@ -38,22 +38,28 @@ public final class InitialisationGame {
     public void whosFirst() {
         for(Player player: players){
             pickOneLetter(player);
-            players.add(player);
         }
         sortLetter();
     }
-    
     public void pickOneLetter(Player player){
         
-        player.addLetter(getRandomLetter());
+       player.addLetterToListOfLetter(getRandomLetter());
+        
+    }
+    
+    public void pickTwoLetter(Player player){
+        
+        for(int i = 0 ; i<2; i++){
+            pickOneLetter(player);
+        }
     }
     
     public char getRandomLetter() {
 
         Random random = new Random();
         char firstLetter = (char) (random.nextInt(26) + 'a');
-
         return firstLetter;
+        
     }
     
     public void sortLetter() {
