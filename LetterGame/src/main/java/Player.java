@@ -22,5 +22,15 @@ public class Player {
     public ArrayList<String> getListOfWord() {
         return listOfWord;
     }
+    
+        public void addLetter(char letter)
+    {
+        listOfLetter.add(letter);
+    }
+    
+        public char getLetter()
+    {
+        return listOfLetter.get(listOfLetter.size()-1);
+    }
 
 }
