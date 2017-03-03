@@ -6,7 +6,8 @@ public class Player {
     private String name;
     private ArrayList<Character> listOfLetter;
     private ArrayList<String> listOfWord;
-
+    private boolean winGame; 
+            
     public Player(String name) {
         this.name = name;
         listOfLetter = new ArrayList<Character>();
@@ -14,8 +15,7 @@ public class Player {
     }
 
     public Player() {
-        
-        
+
     }
 
     public Player(String name, ArrayList<Character> listOfLetter) {
@@ -34,6 +34,7 @@ public class Player {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,18 +42,38 @@ public class Player {
     public ArrayList<String> getListOfWord() {
         return listOfWord;
     }
-    
-        public void addLetterToListOfLetter(char letter)
-    {
+
+    public void addLetterToListOfLetter(char letter) {
         listOfLetter.add(letter);
     }
-    
-        public char getLetter()
-    {
-        return listOfLetter.get(listOfLetter.size()-1);
+
+    public void addWord(String word) {
+        listOfWord.add(word);
     }
-            public char getLastLetter()
-    {
-        return listOfLetter.get(listOfLetter.size()-1);
+
+    public char getLetter() {
+        return listOfLetter.get(listOfLetter.size() - 1);
     }
+
+    public char getLastLetter() {
+        return listOfLetter.get(listOfLetter.size() - 1);
+    }
+
+    public Player existantWord(ArrayList<Player> playersparam, String word) {
+        ArrayList<Player> players = playersparam;
+        players.remove(this);
+        for (Player p : players) {
+            for (String w : p.getListOfWord()) {
+                if (word.contains(w)) {
+                    return p;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void setWin(boolean win) {
+        this.winGame = win;
+    }
+
 }

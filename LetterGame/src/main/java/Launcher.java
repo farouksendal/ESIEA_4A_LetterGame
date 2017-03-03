@@ -6,7 +6,7 @@ public class Launcher {
 
     public static void main(String[] args) {
         Display display = new Display();
-        
+        Game launchGame;
         int numberOfPlayer = 0;
         
         display.Welcome();
@@ -34,7 +34,8 @@ public class Launcher {
             }
         }
         try {
-            new Game(numberOfPlayer);
+            launchGame = new Game(numberOfPlayer);
+            launchGame.playTheGame(); // On déclenche le jeu !
         } catch (Exception e) {
             System.out.println("ERROR: "+e);
         }
