@@ -1,3 +1,5 @@
+package Player;
+
 
 import java.util.ArrayList;
 
@@ -6,8 +8,8 @@ public class Player {
     private String name;
     private ArrayList<Character> listOfLetter;
     private ArrayList<String> listOfWord;
-    private boolean winGame; 
-            
+    private boolean winGame;
+
     public Player(String name) {
         this.name = name;
         listOfLetter = new ArrayList<Character>();
@@ -35,6 +37,10 @@ public class Player {
         return name;
     }
 
+    public void removeWord(String word) {
+        listOfWord.remove(word);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,17 +65,17 @@ public class Player {
         return listOfLetter.get(listOfLetter.size() - 1);
     }
 
-    public Player existantWord(ArrayList<Player> playersparam, String word) {
-        ArrayList<Player> players = playersparam;
-        players.remove(this);
-        for (Player p : players) {
-            for (String w : p.getListOfWord()) {
-                if (word.contains(w)) {
-                    return p;
+    public String existantWord(ArrayList<Player> playersparam, String word) {
+        for (Player p : playersparam) {
+            if (!p.equals(this)) {
+                for (String w : p.getListOfWord()) {
+                    if (word.contains(w)) {
+                        return w;
+                    }
                 }
             }
         }
-        return null;
+        return "";
     }
 
     public void setWin(boolean win) {

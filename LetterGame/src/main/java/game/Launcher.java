@@ -1,14 +1,21 @@
+package game;
 
+
+import display.Display;
+import game.Game;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Launcher {
 
     public static void main(String[] args) {
+
         Display display = new Display();
+
         Game launchGame;
+
         int numberOfPlayer = 0;
-        
+
         display.Welcome();
         String inputString;
         display.NumberOfPlayer();
@@ -21,8 +28,9 @@ public class Launcher {
         } catch (NumberFormatException e) {
             numberOfPlayer = -1;
         }
-
-        while (numberOfPlayer < 0) {
+        
+        //demande le nombre de joueur, minimum 2 joueurs, tout seul c'est moin marrant !
+        while (numberOfPlayer < 2) {
             display.ErrorNumberOfPlayer();
             display.NumberOfPlayer();
             inputString = user_input.next();
@@ -33,12 +41,14 @@ public class Launcher {
                 numberOfPlayer = -1;
             }
         }
+
+        //lancement du jeu
         try {
             launchGame = new Game(numberOfPlayer);
-            launchGame.playTheGame(); // On déclenche le jeu !
+            launchGame.playTheGame();
         } catch (Exception e) {
-            System.out.println("ERROR: "+e);
+            e.printStackTrace();
         }
-        
+
     }
 }

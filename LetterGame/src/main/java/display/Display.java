@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package display;
 
-/**
- *
- * @author nicolas
- */
+
+import Player.Player;
+
+
+/*/
+    Class d'affichage afin de ne pas surcharger avec des System.out.println les methode "métier" du jeu, elle contient la majeur partie des affichages du jeux 
+*/
 public class Display {
 
     public void Welcome() {
@@ -39,6 +38,7 @@ public class Display {
     public void menu() {
         System.out.println("1 : Make a word");
         System.out.println("2 - I pass");
+        System.out.println("3 - Stole a word");
     }
 
     public void EnterWord() {
@@ -48,5 +48,12 @@ public class Display {
     public void wrongWord(Player player) {
         System.out.println("Wronf word "+ player.getName());
     }
-
+    
+    public void findWord(Player player) {
+        System.out.println("Well done " + player.getName() + " you found the word : ");
+    }
+    public void wordStolen(Player player){
+        
+        System.out.println(player.getName() + " loose a word !");
+    }
 }

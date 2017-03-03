@@ -1,3 +1,5 @@
+package fr.esiea.unique.Gossart_Mierzynski.dictionary;
+
 import fr.esiea.unique.Gossart_Mierzynski.dictionary.IDictionary;
 import java.io.BufferedReader;
 import java.io.FileReader;

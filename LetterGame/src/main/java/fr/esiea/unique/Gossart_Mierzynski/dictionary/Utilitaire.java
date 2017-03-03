@@ -2,7 +2,7 @@ package fr.esiea.unique.Gossart_Mierzynski.dictionary;
 
 import java.util.ArrayList;
 
-public class UtilString {
+public class Utilitaire {
 
     /**
      * @param listOfCharacters

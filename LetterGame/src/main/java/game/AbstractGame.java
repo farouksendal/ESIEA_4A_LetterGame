@@ -1,3 +1,5 @@
+package game;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,7 +28,7 @@ public abstract class AbstractGame {
 
     protected ArrayList<Character> pool;
     protected Dictionary dictionary;
-    protected boolean gameState;
+    protected boolean gameState = true;
     
     public AbstractGame() {
         //initialisation
@@ -38,7 +40,7 @@ public abstract class AbstractGame {
             
         getANickname();
         whosFirst();
-       //while (gameState)
+       while (gameState)
            playerPickTwoLetter();
     }
 

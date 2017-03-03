@@ -95,3 +95,26 @@ $ git remote rm origin
 $ git remote add origin <your_git_repository_url>
 $ git push -u origin master
 ```
+
+
+## Rendu du projet
+
+	Date de rendu : 03/03/2017 23h
+	Binôme : Gossart / Mierzynski
+	4A-CFA
+	Contacts : mlab.cours[at]gmail[dot]com (TP à rendre à  cette adresse)
+			   ledoyen.esiea[at]gmail[dot]com			  
+
+- Nous attendons aussi une description de votre architecture (Quel responsabilité à chaque package, ..).
+	Le premier package correspond au Dictionnary, il comprend toutes les méthodes liés à la partie du dictionnaire. 
+	Il y a aussi le package game, comprenant les méthodes nécessaire pour le jeu,
+	Ensuite nous pouvons trouver le package Display gérant l'affichage du jeu,
+	et enfin le package player comprenant les méthodes liés au joueurs.
+	
+- De plus, vous devrez illustrer trois principes SOLID ou design pattern en utilisant vos propres classes. 
+  - pourquoi avez-vous utilisé ce design pattern / principe ? Qu'est-ce que cela vous a apporté ? Comment l'avez-vous appliqué ?
+		le premier principes SOLID illustrer est la responsabilité unique, chaque classe ou méthode dispose d'une seule responsabilité,
+		le second principe SOLID utilisé est Ouvert/Fermé, par exemple la classe player n'est pas ouverte à la modification mais peut en revanche évoluer en ajoutant ou retirant des mots grâce a des accesseurs. Ce principe est utilisé au maximum dans le projet.
+		le troisième principe SOLID utilisé est la substitution de Liskov, nous pouvons remplacer une instance Game par une instance GameAbstract sans modifier la cohérence du programme.
+		Nous avons par ailleur utiliser le Pattern singleton afin d'instancier une seul fois la classe Dictionnary
+
